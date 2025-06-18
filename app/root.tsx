@@ -43,3 +43,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return <Outlet />;
 }
+
+
+
+/* todo esto ahora es comment  | segundo bloque*/
+/* 
+import type { LinksFunction } from "@remix-run/node";
+// existing imports
+
+import appStylesHref from "./app.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: appStylesHref },
+]; */
