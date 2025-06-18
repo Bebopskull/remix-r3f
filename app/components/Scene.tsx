@@ -6,8 +6,8 @@ import { OrbitControls, shaderMaterial } from '@react-three/drei'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Mesh } from 'three'
-import { StripesMaterial } from './3D/StripesMaterial'
-import { GradientMaterial } from './3D/GreadientMaterial'
+import { StripesMaterial } from './3D/materials/StripesMaterial'
+import { GradientMaterial } from './3D/materials/GradientMaterial'
 
 // Rotating cube component
 function RotatingCube() {
@@ -23,8 +23,8 @@ function RotatingCube() {
   return (
     <mesh ref={meshRef}>
       <boxGeometry args={[1, 1, 1]} />
-      {/* <StripesMaterial stripes={15} colorA="#0066ff" colorB="#ffffff" /> */}
-      <GradientMaterial />
+      <StripesMaterial stripes={15} colorA="#0066ff" colorB="#ffffff" />
+      {/* <GradientMaterial /> */}
     </mesh>
   )
 }
