@@ -8,6 +8,13 @@ import { useFrame } from '@react-three/fiber'
 import { Mesh } from 'three'
 import { StripesMaterial } from './3D/materials/StripesMaterial'
 import { GradientMaterial } from './3D/materials/GradientMaterial'
+import {
+  InteractiveCube,
+  EnhancedShaderCube,
+  EnhancedCubeMappedShader,
+  CubeMappedShader,
+  RotatingCubes
+} from './3D/materials/ShaderMappedCube'
 
 // Rotating cube component
 function RotatingCube() {
@@ -15,16 +22,18 @@ function RotatingCube() {
 
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += delta
-      // meshRef.current.rotation.y += delta * 0.5 // Uncomment for 2-axis rotation
+      // meshRef.current.rotation.x += delta
+      meshRef.current.rotation.y += delta * 0.5 // Uncomment for 2-axis rotation
     }
   })
 
   return (
     <mesh ref={meshRef}>
       <boxGeometry args={[1, 1, 1]} />
-      <StripesMaterial stripes={15} colorA="#0066ff" colorB="#ffffff" />
+      {/* <StripesMaterial stripes={15} colorA="#0066ff" colorB="#ffffff" /> */}
       {/* <GradientMaterial /> */}
+      {/* <EnhancedShaderCube /> */}
+      <CubeMappedShader />
     </mesh>
   )
 }
@@ -41,6 +50,8 @@ export default function Scene() {
         <OrbitControls />
         {/* 3D content */}
         <RotatingCube />
+        <RotatingCubes />
+
       </Canvas>
     </div>
   )

@@ -4,8 +4,8 @@ import Scene from "~/components/Scene"
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "My First 3D Scene" },
-    { name: "description", content: "Learning React Three Fiber!" },
+    { title: "Bebopskull.io" },
+    { name: "description", content: "Ed Vasquez' Portfolio" },
   ]
 }
 
