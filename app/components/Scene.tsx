@@ -13,8 +13,19 @@ import {
   EnhancedShaderCube,
   EnhancedCubeMappedShader,
   CubeMappedShader,
-  RotatingCubes
+  RotatingCubes,
 } from './3D/materials/ShaderMappedCube'
+import BeachScene from './3D/Scenes/beachScene'
+import MexicanPlazaScene from './3D/Scenes/mexicanPlaza_r3f'
+import ChamacoCoreComplexMesh from './3D/Scenes/chamacocore-complex-mesh'
+import ChamacoPlazaCartoon from './3D/Scenes/chamaco-plaza-cartoon'
+import ChamacoCoreRef from './3D/Scenes/chamacocore-refined-clay'
+// import ChamacoCoreBeach from './3D/Scenes/chamacocore-beach-enhanced'
+import CornellBoxScene from './3D/Scenes/cornell-box-gallery'
+
+
+
+
 
 // Rotating cube component
 function RotatingCube() {
@@ -28,8 +39,8 @@ function RotatingCube() {
   })
 
   return (
-    <mesh ref={meshRef}>
-      <boxGeometry args={[1, 1, 1]} />
+    <mesh ref={meshRef} position={[0, 5, 0]}>
+      <boxGeometry args={[2, 2, 2]} />
       {/* <StripesMaterial stripes={15} colorA="#0066ff" colorB="#ffffff" /> */}
       {/* <GradientMaterial /> */}
       {/* <EnhancedShaderCube /> */}
@@ -42,16 +53,33 @@ function RotatingCube() {
 export default function Scene() {
   return (
     <div style={{ width: '100%', height: '100vh' }}>
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      {/* <Canvas camera={{ position: [0, 0, 5] }}> */}
+
+      <Canvas camera={{ position: [0, 8, 15], fov: 60 }} shadows>
+        {/* Lighting for both scenes */}
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          position={[10, 15, 5]}
+          intensity={1}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
         {/* Basic lighting */}
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         {/* Mouse controls */}
         <OrbitControls />
         {/* 3D content */}
-        <RotatingCube />
-        <RotatingCubes />
-
+        <RotatingCube position={[0, 0, 0]} />
+        {/* <RotatingCubes /> */}
+        {/* <BeachScene /> */}
+        {/* <MexicanPlazaScene /> */}
+        {/* <ChamacoCoreComplexMesh /> */}
+        {/* <ChamacoPlazaCartoon /> */}
+        {/* <ChamacoCoreRef /> */}
+        {/* <ChamacoCoreBeach /> */}
+        <CornellBoxScene />
       </Canvas>
     </div>
   )
