@@ -1,0 +1,465 @@
+{
+	"asset":
+	{
+		"version": "2.0",
+		"generator": "Unreal Engine 5.6.0"
+	},
+	"scene": 0,
+	"accessors": [
+		{
+			"bufferView": 0,
+			"count": 720,
+			"type": "SCALAR",
+			"componentType": 5121
+		},
+		{
+			"bufferView": 1,
+			"count": 165,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -80.013588, 0.146682948, -80.0116425 ],
+			"max": [ 80.016449, 90.000946, 80.0272141 ]
+		},
+		{
+			"bufferView": 2,
+			"count": 165,
+			"type": "VEC3",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 3,
+			"count": 165,
+			"type": "VEC4",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 4,
+			"count": 165,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 5,
+			"count": 6,
+			"type": "SCALAR",
+			"componentType": 5121
+		},
+		{
+			"bufferView": 6,
+			"count": 4,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -64.9466248, 80, -64.9546585 ],
+			"max": [ 64.9564743, 80, 64.9562759 ]
+		},
+		{
+			"bufferView": 7,
+			"count": 4,
+			"type": "VEC3",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 8,
+			"count": 4,
+			"type": "VEC4",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 9,
+			"count": 4,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 10,
+			"count": 42,
+			"type": "SCALAR",
+			"componentType": 5121
+		},
+		{
+			"bufferView": 11,
+			"count": 12,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -71.6243668, 0.0020037517, -71.6210403 ],
+			"max": [ 71.634201, 0.179335237, 71.6272659 ]
+		},
+		{
+			"bufferView": 12,
+			"count": 12,
+			"type": "VEC3",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 13,
+			"count": 12,
+			"type": "VEC4",
+			"componentType": 5120,
+			"normalized": true
+		},
+		{
+			"bufferView": 14,
+			"count": 12,
+			"type": "VEC2",
+			"componentType": 5126
+		}
+	],
+	"buffers": [
+		{
+			"uri": "CornellBoxTest_Level.bin",
+			"byteLength": 5840
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 720,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1980,
+			"byteOffset": 720,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 660,
+			"byteOffset": 2700,
+			"byteStride": 4,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 660,
+			"byteOffset": 3360,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1320,
+			"byteOffset": 4020,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 6,
+			"byteOffset": 5340,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 48,
+			"byteOffset": 5348,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 16,
+			"byteOffset": 5396,
+			"byteStride": 4,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 16,
+			"byteOffset": 5412,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 32,
+			"byteOffset": 5428,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 42,
+			"byteOffset": 5460,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 144,
+			"byteOffset": 5504,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 48,
+			"byteOffset": 5648,
+			"byteStride": 4,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 48,
+			"byteOffset": 5696,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 96,
+			"byteOffset": 5744,
+			"target": 34962
+		}
+	],
+	"cameras": [
+		{
+			"name": "CameraComponent",
+			"type": "perspective",
+			"perspective":
+			{
+				"aspectRatio": 1.77777779,
+				"yfov": 0.490276188,
+				"znear": 10
+			}
+		}
+	],
+	"images": [
+		{
+			"uri": "MI_emisiva_Occlusion.png"
+		},
+		{
+			"uri": "T_qj2luvs0_4K_B.png"
+		},
+		{
+			"uri": "T_qj2luvs0_4K_ORM.png"
+		},
+		{
+			"uri": "T_Generic_N.png"
+		}
+	],
+	"materials": [
+		{
+			"name": "MI_PaintedWall_cornellBoxTestFBX",
+			"pbrMetallicRoughness":
+			{
+				"baseColorTexture":
+				{
+					"index": 0
+				},
+				"metallicRoughnessTexture":
+				{
+					"index": 1
+				}
+			},
+			"normalTexture":
+			{
+				"index": 2
+			},
+			"occlusionTexture":
+			{
+				"index": 1
+			}
+		},
+		{
+			"name": "MI_emisiva",
+			"pbrMetallicRoughness":
+			{
+				"metallicFactor": 0,
+				"roughnessFactor": 0
+			},
+			"occlusionTexture":
+			{
+				"index": 3
+			},
+			"emissiveFactor": [ 1, 1, 1 ],
+			"extensions":
+			{
+				"KHR_materials_emissive_strength":
+				{
+					"emissiveStrength": 5
+				}
+			}
+		},
+		{
+			"name": "MI_PaintedWall_cornellBoxTestFBX",
+			"pbrMetallicRoughness":
+			{
+				"baseColorTexture":
+				{
+					"index": 0
+				},
+				"metallicRoughnessTexture":
+				{
+					"index": 1
+				}
+			},
+			"normalTexture":
+			{
+				"index": 2
+			},
+			"occlusionTexture":
+			{
+				"index": 1
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "cornellBoxTestFBX",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 1,
+						"NORMAL": 2,
+						"TANGENT": 3,
+						"TEXCOORD_0": 4
+					},
+					"indices": 0,
+					"material": 0
+				},
+				{
+					"attributes":
+					{
+						"POSITION": 6,
+						"NORMAL": 7,
+						"TANGENT": 8,
+						"TEXCOORD_0": 9
+					},
+					"indices": 5,
+					"material": 1
+				},
+				{
+					"attributes":
+					{
+						"POSITION": 11,
+						"NORMAL": 12,
+						"TANGENT": 13,
+						"TEXCOORD_0": 14
+					},
+					"indices": 10,
+					"material": 2
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"name": "Brush0"
+		},
+		{
+			"name": "CineCameraActor",
+			"translation": [ -144.185242, 3319.7417, 23359.5332 ],
+			"rotation": [ 0.0271442812, 0.706585586, 0.0271442812, 0.706585586 ],
+			"children": [ 2 ]
+		},
+		{
+			"name": "CameraComponent",
+			"children": [ 3 ]
+		},
+		{
+			"name": "CameraComponent",
+			"rotation": [ -0, -0.707106829, 0, 0.707106769 ],
+			"camera": 0
+		},
+		{
+			"name": "cornellBoxTestFBX",
+			"scale": [ 10, 10, 10 ],
+			"mesh": 0
+		},
+		{
+			"name": "RectLight",
+			"translation": [ 0, 560, 930 ],
+			"rotation": [ -0.0946513638, 0.700743258, -0.0946513638, 0.700743258 ],
+			"children": [ 6 ]
+		},
+		{
+			"name": "LightNode_RectLight",
+			"rotation": [ -0, -0.707106829, 0, 0.707106769 ]
+		},
+		{
+			"name": "DirectionalLight",
+			"translation": [ 0, 810, 1170 ],
+			"rotation": [ 0.147348166, 0.532476306, -0.486036032, 0.677145839 ],
+			"scale": [ 2.5, 2.5, 2.5 ],
+			"children": [ 8 ]
+		},
+		{
+			"name": "LightNode_DirectionalLight",
+			"rotation": [ -0, -0.707106829, 0, 0.707106769 ],
+			"extensions":
+			{
+				"KHR_lights_punctual":
+				{
+					"light": 0
+				}
+			}
+		},
+		{
+			"name": "DefaultPhysicsVolume0"
+		},
+		{
+			"name": "AbstractNavData-Default"
+		}
+	],
+	"samplers": [
+		{
+			"minFilter": 9984,
+			"magFilter": 9728,
+			"wrapS": 33071,
+			"wrapT": 33071
+		},
+		{
+			"minFilter": 9987,
+			"magFilter": 9729
+		}
+	],
+	"scenes": [
+		{
+			"name": "CornellBoxTest_Level",
+			"nodes": [ 0, 1, 4, 5, 7, 9, 10 ]
+		}
+	],
+	"textures": [
+		{
+			"name": "T_qj2luvs0_4K_B",
+			"sampler": 1,
+			"source": 1
+		},
+		{
+			"name": "T_qj2luvs0_4K_ORM",
+			"sampler": 1,
+			"source": 2
+		},
+		{
+			"name": "T_Generic_N",
+			"sampler": 1,
+			"source": 3
+		},
+		{
+			"name": "MI_emisiva_Occlusion",
+			"sampler": 0,
+			"source": 0
+		}
+	],
+	"extensions":
+	{
+		"KHR_lights_punctual":
+		{
+			"lights": [
+				{
+					"name": "DirectionalLight",
+					"type": "directional",
+					"color": [ 1, 0, 0 ],
+					"intensity": 21.3143616
+				}
+			]
+		}
+	},
+	"extensionsUsed": [
+		"KHR_mesh_quantization",
+		"KHR_materials_emissive_strength",
+		"KHR_lights_punctual"
+	],
+	"extensionsRequired": [
+		"KHR_mesh_quantization"
+	]
+}

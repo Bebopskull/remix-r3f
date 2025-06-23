@@ -12,7 +12,7 @@ import {
   Environment
 } from '@react-three/drei';
 import { ModelLoader,
-  bufferModelLoader,
+  SceneLoader,
   GLTFModel, 
   AutoScaledGLTFScene, 
   CompositeGLTFScene, 
@@ -26,9 +26,9 @@ import * as THREE from 'three';
 const CornellBox = () => {
   return (
     <group>
-
-      
-      <ModelLoader modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" />
+      {/* <ModelLoader modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" /> */}
+      <GLTFModel modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1}/>
+      {/* <GLTFModel modelPath='./public/models/GLTF_normals/cornellBox_FBXtoGLTF_normal.gltf' modelScale={0.1}/> */}
     </group>
   )
 }
