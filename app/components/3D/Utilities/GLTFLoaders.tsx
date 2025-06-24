@@ -4,31 +4,20 @@ import { useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-// Helper to recursively find the first mesh in an Object3D hierarchy
-function findFirstMesh(object: THREE.Object3D): THREE.Mesh | null {
-  if (object instanceof THREE.Mesh) return object;
-  for (const child of object.children) {
-    const mesh = findFirstMesh(child);
-    if (mesh) return mesh;
-  }
-  return null;
-}
-
+//basic modelloader:
 function ModelLoader({ modelPath, ...props }: { modelPath: string, props: any }) {
   const gltf = useLoader(GLTFLoader, modelPath);
 
   // Traverse all meshes and smooth their geometry
   gltf.scene.traverse((child) => {
-    if (child instanceof THREE.Mesh && child.geometry) {
+    if (child.isMesh && child.geometry) {
       // If geometry is not a BufferGeometry, convert it
-      if (!child.geometry.isBufferGeometry && (child.geometry as any).toBufferGeometry) {
-        child.geometry = (child.geometry as any).toBufferGeometry();
+      if (!child.geometry.isBufferGeometry && child.geometry.toBufferGeometry) {
+        child.geometry = child.geometry.toBufferGeometry();
       }
       child.geometry.computeVertexNormals();
-      if (child.material) {
-        (child.material as any).flatShading = false; // Ensure smooth shading
-        (child.material as any).needsUpdate = true;
-      }
+      child.material.flatShading = false; // Ensure smooth shading
+      child.material.needsUpdate = true;
     }
   });
 
@@ -40,16 +29,14 @@ function SceneLoader({ scenePath, ...props }: { scenePath: string, props: any })
 
   // Traverse all meshes and smooth their geometry
   gltf.scene.traverse((child) => {
-    if (child instanceof THREE.Mesh && child.geometry) {
+    if (child.isMesh && child.geometry) {
       // If geometry is not a BufferGeometry, convert it
-      if (!child.geometry.isBufferGeometry && (child.geometry as any).toBufferGeometry) {
-        child.geometry = (child.geometry as any).toBufferGeometry();
+      if (!child.geometry.isBufferGeometry && child.geometry.toBufferGeometry) {
+        child.geometry = child.geometry.toBufferGeometry();
       }
       child.geometry.computeVertexNormals();
-      if (child.material) {
-        (child.material as any).flatShading = false; // Ensure smooth shading
-        (child.material as any).needsUpdate = true;
-      }
+      child.material.flatShading = false; // Ensure smooth shading
+      child.material.needsUpdate = true;
     }
   });
 
@@ -68,10 +55,10 @@ function SceneLoader({ scenePath, ...props }: { scenePath: string, props: any })
 
 // Basic GLTF loader component
 const GLTFModel = ({ 
-  modelPath = '', 
+  modelPath = '/models/your-model.gltf', 
   position = [0, 0, 0], 
   rotation = [0, 0, 0], 
-  modelScale = 1,
+  scale = 1,
   castShadow = true,
   receiveShadow = true,
   contactShadows = true
@@ -91,14 +78,14 @@ const GLTFModel = ({
   // Apply shadows to all meshes in the model
   useEffect(() => {
     scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
+      if (child.isMesh) {
         child.castShadow = castShadow
         child.receiveShadow = receiveShadow
         
         // Optional: Apply ChamacoCore style to materials
         if (child.material) {
-          (child.material as any).roughness = 0.7;
-          (child.material as any).metalness = 0;
+          child.material.roughness = 0.7
+          child.material.metalness = 0
         }
       }
     })
@@ -110,7 +97,7 @@ const GLTFModel = ({
       object={scene} 
       position={position} 
       rotation={rotation} 
-      scale={modelScale}
+      scale={scale}
     />
   )
 }
@@ -134,14 +121,12 @@ const AutoScaledGLTFScene = ({ modelPath = '/models/your-model.gltf' }) => {
 
       // Scale to fit
       const maxDim = Math.max(size.x, size.y, size.z)
-      if (maxDim > 0 && scene.scale && typeof scene.scale.setScalar === 'function') {
-        const fitScaleValue = 1 / maxDim; // Adjust 5 to your preferred size
-        (scene.scale as THREE.Vector3).setScalar(fitScaleValue);
-      }
+      const scale = 5 / maxDim // Adjust 5 to your preferred size
+      scene.scale.setScalar(scale)
 
       // Apply shadows
       scene.traverse((child) => {
-        if (child instanceof THREE.Mesh) {
+        if (child.isMesh) {
           child.castShadow = true
           child.receiveShadow = true
         }
@@ -153,6 +138,7 @@ const AutoScaledGLTFScene = ({ modelPath = '/models/your-model.gltf' }) => {
     <>
       {/* Use Stage for automatic lighting and centering */}
       <Stage
+        contactShadows={contactShadows}
         shadows
         adjustCamera
         intensity={0.5}

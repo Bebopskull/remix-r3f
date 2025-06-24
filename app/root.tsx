@@ -4,10 +4,18 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  LiveReload,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import CornellBoxSimulation from "./components/Scene";
 
 import "./tailwind.css";
+
+export const meta: MetaFunction = () => [
+  { charset: "utf-8" },
+  { title: "Nikai Interactive" },
+  { name: "viewport", content: "width=device-width,initial-scale=1" },
+]
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,22 +34,44 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body>
         {children}
         <ScrollRestoration />
+        <CornellBoxSimulation>
+          {/* Dynamic content based on route */}
+          <Outlet />
+        </CornellBoxSimulation>
+
+        {/* Optional UI Overlay */}
+        {/* <UIOverlay /> */}
         <Scripts />
       </body>
     </html>
   );
 }
 
-export default function App() {
+/* export default function App() {
   return <Outlet />;
+} */
+
+export default function App() {
+  return (
+    <html lang="en">
+      <body>
+        <div className="app">
+          {/* Fixed 3D Scene Container */}
+          
+        </div>
+
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  )
 }
 
 
