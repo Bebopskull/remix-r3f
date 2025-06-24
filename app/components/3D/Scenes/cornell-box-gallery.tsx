@@ -39,7 +39,7 @@ const GalleryLighting = () => {
     <>
       {/* Main area light from above */}
       <rectAreaLight
-        position={[0, 2.2*10, 0]}
+        position={[0, 9, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
         width={1.2*10}
         height={1.2*10}

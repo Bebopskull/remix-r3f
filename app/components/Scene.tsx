@@ -53,9 +53,9 @@ function RotatingCube() {
 export default function Scene() {
   return (
     <div style={{ width: '100%', height: '100vh' }}>
-      {/* <Canvas camera={{ position: [0, 0, 5] }}> */}
+      <Canvas camera={{ position: [0, 0, 9] }}>
 
-      <Canvas camera={{ position: [0, 8, 15], fov: 60 }} shadows>
+      {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
         {/* Lighting for both scenes */}
         <ambientLight intensity={0.4} />
         <directionalLight
@@ -69,17 +69,25 @@ export default function Scene() {
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         {/* Mouse controls */}
-        <OrbitControls />
+        <OrbitControls target={[0, 3, 0]} 
+        enableZoom={false}
+        // horizontal rotation
+        maxAzimuthAngle={Math.PI / 4}
+        minAzimuthAngle={-  Math.PI / 4}
+        // vertical rotation
+        maxPolarAngle={Math.PI / 2.2}
+        minPolarAngle={Math.PI / 2.2}
+        enablePan={false}
+        />
         {/* 3D content */}
-        <RotatingCube position={[0, 0, 0]} />
-        {/* <RotatingCubes /> */}
+        {/* <RotatingCube position={[0, 0, 0]} /> */}
+        <CornellBoxScene/>
         {/* <BeachScene /> */}
         {/* <MexicanPlazaScene /> */}
         {/* <ChamacoCoreComplexMesh /> */}
         {/* <ChamacoPlazaCartoon /> */}
         {/* <ChamacoCoreRef /> */}
         {/* <ChamacoCoreBeach /> */}
-        <CornellBoxScene />
       </Canvas>
     </div>
   )

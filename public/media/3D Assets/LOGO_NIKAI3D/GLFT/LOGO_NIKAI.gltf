@@ -1,0 +1,153 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v3.1.31193554)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4368,
+            "type": "VEC3",
+            "max": [
+                11.993603706359864,
+                10.929378509521485,
+                11.993602752685547
+            ],
+            "min": [
+                -11.999999046325684,
+                -4.76837158203125e-7,
+                -12.006396293640137
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4368,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4368,
+            "type": "VEC2",
+            "max": [
+                0.9980080723762512,
+                0.9981885552406311
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.09247201681137085
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 10620,
+            "type": "SCALAR",
+            "max": [
+                4367.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 161016,
+            "uri": "LOGO_NIKAI.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 52416,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 52416,
+            "byteLength": 52416,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 104832,
+            "byteLength": 34944,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 139776,
+            "byteLength": 21240,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert2",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.5,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "logo_nikai",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "logo_nikai",
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
