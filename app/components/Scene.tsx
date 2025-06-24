@@ -22,6 +22,8 @@ import ChamacoPlazaCartoon from './3D/Scenes/chamaco-plaza-cartoon'
 import ChamacoCoreRef from './3D/Scenes/chamacocore-refined-clay'
 // import ChamacoCoreBeach from './3D/Scenes/chamacocore-beach-enhanced'
 import CornellBoxScene from './3D/Scenes/cornell-box-gallery'
+import Logo from './home'
+
 
 
 
@@ -82,6 +84,7 @@ export default function Scene() {
         {/* 3D content */}
         {/* <RotatingCube position={[0, 0, 0]} /> */}
         <CornellBoxScene/>
+        <Logo/>
         {/* <BeachScene /> */}
         {/* <MexicanPlazaScene /> */}
         {/* <ChamacoCoreComplexMesh /> */}

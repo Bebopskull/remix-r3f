@@ -215,4 +215,4 @@ const LoadingScreen = () => {
   )
 }
 
-export { ModelLoader, GLTFModel, AutoScaledGLTFScene, CompositeGLTFScene, GLTFSceneWithLoader, LoadingScreen } 
+export { ModelLoader, SceneLoader, GLTFModel, AutoScaledGLTFScene, CompositeGLTFScene, GLTFSceneWithLoader, LoadingScreen } 
