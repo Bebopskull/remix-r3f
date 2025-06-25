@@ -54,8 +54,8 @@ function RotatingCube() {
 // Main scene wrapper
 export default function Scene() {
   return (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <Canvas camera={{ position: [0, 0, 9] }}>
+    <group style={{ width: '100%', height: '100vh' }}>
+      <group camera={{ position: [0, 0, 9] }}>
 
       {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
         {/* Lighting for both scenes */}
@@ -91,7 +91,7 @@ export default function Scene() {
         {/* <ChamacoPlazaCartoon /> */}
         {/* <ChamacoCoreRef /> */}
         {/* <ChamacoCoreBeach /> */}
-      </Canvas>
-    </div>
+      </group>
+    </group>
   )
 }

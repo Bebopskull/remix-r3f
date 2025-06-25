@@ -22,7 +22,7 @@ import { ModelLoader,
 
 import * as THREE from 'three';
 
-// Cornell Box Container
+// Cornell Box Container //carga el cornellBoxTest_fromFBXtoGLTF.gltf
 const CornellBox = () => {
   return (
     <group>
@@ -36,7 +36,7 @@ const CornellBox = () => {
 // Gallery Lighting System
 const GalleryLighting = () => {
   return (
-    <>
+    <group>
       {/* Main area light from above */}
       <rectAreaLight
         position={[0, 9, 0]}
@@ -69,7 +69,7 @@ const GalleryLighting = () => {
       
       {/* Ambient light for overall fill */}
       <ambientLight intensity={0.2} color="#F8F8FF" />
-    </>
+    </group>
   );
 };
 
