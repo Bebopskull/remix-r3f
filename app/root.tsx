@@ -48,6 +48,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Optional UI Overlay */}
         {/* <UIOverlay /> */}
         <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
@@ -56,25 +57,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 /* export default function App() {
   return <Outlet />;
 } */
-
-export default function App() {
-  return (
-    <html lang="en">
-      <body>
-        <div className="app">
-          {/* Fixed 3D Scene Container */}
-          
-        </div>
-
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
-  )
-}
-
-
 
 /* todo esto ahora es comment  | segundo bloque*/
 /* 
