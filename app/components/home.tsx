@@ -26,7 +26,7 @@ import * as THREE from 'three';
 
 export default function Logo() {
   return (
-    <GLTFModel modelPath='/media/3dAssets/LOGO_NIKAI3D/GLFT/LOGO_NIKAI.gltf' scale={0.25} />
+    <GLTFModel modelPath='/media/3dAssets/LOGO_NIKAI3D/GLFT/LOGO_NIKAI.gltf' scale={0.35} />
   )
 }
 

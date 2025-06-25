@@ -2,7 +2,8 @@ import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, 
   useFrame, 
   useThree, 
-  useLoader
+  useLoader,
+  Float16BufferAttributeProps
 } from '@react-three/fiber';
 import { 
   OrbitControls, 
@@ -23,12 +24,16 @@ import { ModelLoader,
 import * as THREE from 'three';
 
 // Cornell Box Container
-const CornellBox = () => {
+const CornellBox = ({modelScale}: {modelScale: number}) => {
   return (
     <group>
-      {/* <ModelLoader modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" /> */}
-      <GLTFModel modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1}/>
-      {/* <GLTFModel modelPath='./public/models/GLTF_normals/cornellBox_FBXtoGLTF_normal.gltf' modelScale={0.1}/> */}
+      {/* <ModelLoader modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" scale={0.1}/> */}
+      <GLTFModel 
+        modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" 
+        scale={0.1}
+        position={[0, 0, 0]}
+      />
+      {/* <GLTFModel modelPath='./public/models/GLTF_normals/cornellBox_FBXtoGLTF_normal.gltf' modelScale={0.01}/> */}
     </group>
   )
 }
@@ -82,7 +87,7 @@ const CornellBoxGallery = ({ projectIndex = 0, onProjectChange }: { projectIndex
     <group>
       {/* CameraController is not needed, camera is controlled by parent Canvas */}
       {/* Cornell Box Structure */}
-      <CornellBox />
+      <CornellBox modelScale={0.05}/>
       {/* Central Morphing Object */}
       {/* <CentralObject projectIndex={projectIndex} /> */}
       {/* Gallery Lighting */}

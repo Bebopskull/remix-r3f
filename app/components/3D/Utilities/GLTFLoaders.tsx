@@ -56,7 +56,7 @@ function SceneLoader({ scenePath, ...props }: { scenePath: string, props: any })
 // Basic GLTF loader component
 const GLTFModel = ({ 
   modelPath = '/models/your-model.gltf', 
-  position = [0, 0, 0], 
+  position = [0, 3, 0], 
   rotation = [0, 0, 0], 
   scale = 1,
   castShadow = true,

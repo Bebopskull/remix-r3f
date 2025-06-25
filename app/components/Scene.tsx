@@ -13,8 +13,18 @@ import Logo from './home'
 // Main scene wrapper
 export default function CornellBoxSimulation({children}: {children: React.ReactNode}) {
   return (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <Canvas camera={{ position: [0, 0, 9] }}>
+    <div style={{ 
+      width: '100vw', 
+      height: '100vh',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 0
+    }}>
+      <Canvas 
+        camera={{ position: [0, 5, 9] }}
+        style={{ width: '100%', height: '100%' }}
+      >
 
       {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
         {/* Lighting for both scenes */}

@@ -5,6 +5,9 @@
 html,
 body {
   @apply bg-white dark:bg-gray-950;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
