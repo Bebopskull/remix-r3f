@@ -48,7 +48,7 @@ function AnimatedModel() {
   );
 }
 
-export default function Logo() {
+export default function Logo3D() {
   return (
     <group position={[0, 2.2, 0]}>
         <AnimatedModel />

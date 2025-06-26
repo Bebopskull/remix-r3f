@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
-import '../CSS/estilocontinuo.css'
-import '../CSS/nikaiCSS.css'
+import '../../src/styles/estilocontinuo.css'
+import '../../src/styles/nikaiCSS.css'
 
 // Lower Left Navigation List Component
 const contextualMenu = ({ items, activeSection, onItemClick, className = "" }) => {
@@ -10,14 +10,7 @@ const contextualMenu = ({ items, activeSection, onItemClick, className = "" }) =
   return (
     <div className={`NavSecciones fixed bottom-6 left-6 z-40 ${className}`}>
       <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden shadow-2xl min-w-64">
-        {/* Section Header */}
-        <div className="px-4 py-3 bg-white/5 border-b border-white/10">
-          <h3 className="text-white text-sm font-medium capitalize tracking-wide">
-            {activeSection}
-          </h3>
-        </div>
-        
-        {/* List Items */}
+        {/* List Items */}        
         <div className="max-h-96 overflow-y-auto">
           {items.map((item, index) => (
             <button

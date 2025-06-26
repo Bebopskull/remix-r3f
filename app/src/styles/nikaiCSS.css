@@ -219,7 +219,6 @@ label{
   opacity:20%;
 */
 
-
 }
 
 #canvas-container {
@@ -229,6 +228,15 @@ label{
   width: 100vw;
   height: 100vh;
   z-index: 0;
+}
+
+.GUI{ 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
 }
 
 /*
@@ -384,9 +392,6 @@ label{
   z-index: 1;
   align-self:flex-start;
   align-content: flex-end;
-
-
-
 
 }
 

@@ -5,7 +5,7 @@ export const navigationData = {
       title: 'Luv - Laboratoire d\'univers Virtuels', 
       path: '/products/luv', 
       id: 'luv',
-      subItems: [
+      LUVProjects: [
         { title: 'Elections Ontario', path: '/products/luv/elections-ontario', id: 'elections-ontario' },
         { title: 'CampKazoo', path: '/products/luv/camp-kazoo' },
         { title: 'Aquazette', path: '/products/luv/aquazette' },

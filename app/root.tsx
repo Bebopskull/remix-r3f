@@ -14,8 +14,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Suspense } from 'react'
 import { useNavigate, useLocation } from "@remix-run/react"
-import Header from '~/components/Header'
-import { overlayedGUI } from '~/components/overlayedGUI'  
+import { OverlayedGUI } from 'app/components/GUI/overlayedGUI.jsx'  
 import CornellBoxGallery from '~/components/3D/Scenes/cornell-box-gallery'
 
 
@@ -147,21 +146,21 @@ export default function App() {
         <Links />
       </head>
       <body className="m-0 p-0 overflow-hidden bg-gray-900 font-sans">
-        <Header />
+        {/* <Header /> */}
         <div className="canvasContainer fixed inset-0 w-screen h-screen">
           {/* Your existing Scene setup */}
           <Canvas 
-          camera={{ position: [0, 0, 9] }}
-          //for now hard code the style of the canvas
-          style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
+            camera={{ position: [0, 0, 9] }}
+            //for now hard code the style of the canvas
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
           >
             {/* Your existing lighting setup */}
             <ambientLight intensity={0.4} />
@@ -194,11 +193,7 @@ export default function App() {
               </CornellBoxContainer>
             </Suspense>
           </Canvas>
-
-          <overlayedGUI />
-
-          {/* Navigation Overlay */}
-          {/* <NavigationOverlay /> */}
+          <OverlayedGUI />
         </div>
 
         <ScrollRestoration />

@@ -1,8 +1,8 @@
 import React from 'react';
-import '../CSS/webgl.css'
-import '../CSS/glsl.css'
-import '../CSS/estilocontinuo.css'
-import '../CSS/nikaiCSS.css'
+import '../../src/styles/webgl.css'
+import '../../src/styles/glsl.css'
+import '../../src/styles/estilocontinuo.css'
+import '../../src/styles/nikaiCSS.css'
 import NavBar from './NavBar';
 
 const Header: React.FC = () => (
