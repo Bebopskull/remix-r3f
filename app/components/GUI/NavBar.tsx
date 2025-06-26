@@ -1,5 +1,5 @@
-import '../CSS/estilocontinuo.css'
-import '../CSS/nikaiCSS.css'
+import '../../src/styles/estilocontinuo.css'
+import '../../src/styles/nikaiCSS.css'
 
 import type { FC, PropsWithChildren } from 'react';
 

@@ -4,8 +4,10 @@ import '../../src/styles/estilocontinuo.css'
 import '../../src/styles/nikaiCSS.css'
 
 // Lower Left Navigation List Component
-const contextualMenu = ({ items, activeSection, onItemClick, className = "" }) => {
+const contextualMenu = ({ items, activeSection=null, onItemClick=null, className = "" }) => {
   if (!items || items.length === 0) return null;
+
+  
   
   return (
     <div className={`NavSecciones fixed bottom-6 left-6 z-40 ${className}`}>

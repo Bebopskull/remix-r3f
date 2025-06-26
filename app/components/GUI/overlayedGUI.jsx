@@ -1,16 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 import Header from './Header';
 import contextualMenu from './contextualMenu';
-import '../../CSS/estilocontinuo.css'
-import '../../CSS/nikaiCSS.css'
-import { navigationData } from '../routes/navigationData';
+import '../../src/styles/estilocontinuo.css'
+import '../../src/styles/nikaiCSS.css'
+import { navigationData } from '../../src/routes/navigationData';
 
 
 export const OverlayedGUI = () => {
   return (
     <div className="GUI">
       <Header />
-      <contextualMenu items={navigationData.projects} activeSection={activeSection} onItemClick={onItemClick} />
+      <contextualMenu items={navigationData.projects} />
     </div>
   );
 };

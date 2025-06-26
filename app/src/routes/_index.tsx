@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { ClientOnly } from "remix-utils/client-only"
 import Scene from "~/components/Scene"
+import Home from "~/components/home"
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,7 +18,7 @@ export default function Index() {
           Loading 3D experience...
         </div>
       }>
-      {() => <Scene />}
+      {() => <Home />}
       </ClientOnly>
     </group>
   )

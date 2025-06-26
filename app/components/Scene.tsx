@@ -21,7 +21,6 @@ import ChamacoCoreComplexMesh from './3D/Scenes/chamacocore-complex-mesh'
 import ChamacoPlazaCartoon from './3D/Scenes/chamaco-plaza-cartoon'
 import ChamacoCoreRef from './3D/Scenes/chamacocore-refined-clay'
 // import ChamacoCoreBeach from './3D/Scenes/chamacocore-beach-enhanced'
-import CornellBoxScene from './3D/Scenes/cornell-box-gallery'
 import Logo3D from './home'
 
 
@@ -54,8 +53,8 @@ function RotatingCube() {
 // Main scene wrapper
 export default function Scene() {
   return (
-    <group style={{ width: '100%', height: '100vh' }}>
-      <group camera={{ position: [0, 0, 9] }}>
+    <group>
+      <group>
 
       {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
         {/* Lighting for both scenes */}
@@ -83,7 +82,7 @@ export default function Scene() {
         />
         {/* 3D content */}
         {/* <RotatingCube position={[0, 0, 0]} /> */}
-        <CornellBoxScene/>
+        {/* <CornellBoxScene/> */}
         <Logo3D/>
         {/* <BeachScene /> */}
         {/* <MexicanPlazaScene /> */}

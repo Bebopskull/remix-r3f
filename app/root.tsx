@@ -145,7 +145,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="m-0 p-0 overflow-hidden bg-gray-900 font-sans">
+      <body className="m-0 p-0 overflow-hidden bg-gray-900 ">
         {/* <Header /> */}
         <div className="canvasContainer fixed inset-0 w-screen h-screen">
           {/* Your existing Scene setup */}
@@ -175,15 +175,30 @@ export default function App() {
             <directionalLight position={[10, 10, 5]} intensity={1} />
 
             {/* Your existing OrbitControls */}
-            <OrbitControls
-              target={[0, 3, 0]}
-              enableZoom={false}
-              maxAzimuthAngle={Math.PI / 4}
-              minAzimuthAngle={-Math.PI / 4}
-              maxPolarAngle={Math.PI / 2.2}
-              minPolarAngle={Math.PI / 2.2}
-              enablePan={false}
-            />
+            {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
+        {/* Lighting for both scenes */}
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          position={[10, 15, 5]}
+          intensity={1}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
+        {/* Basic lighting */}
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        {/* Mouse controls */}
+        <OrbitControls target={[0, 3, 0]} 
+        enableZoom={false}
+        // horizontal rotation
+        maxAzimuthAngle={Math.PI / 4}
+        minAzimuthAngle={-  Math.PI / 4}
+        // vertical rotation
+        maxPolarAngle={Math.PI / 2.2}
+        minPolarAngle={Math.PI / 2.2}
+        enablePan={false}
+        />
 
             {/* Cornell Box - Always Present */}
             <Suspense fallback={<LoadingFallback />}>
