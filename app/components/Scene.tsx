@@ -69,6 +69,7 @@ export default function Scene() {
         {/* Basic lighting */}
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
+        
         {/* Mouse controls */}
         <OrbitControls target={[0, 3, 0]} 
         enableZoom={false}

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import '../CSS/estilocontinuo.css'
-import '../CSS/nikaiCSS.css'
+
 
 // Lower Left Navigation List Component
 const contextualMenu = ({ items, activeSection, onItemClick, className = "" }) => {

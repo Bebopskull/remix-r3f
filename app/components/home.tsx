@@ -23,9 +23,34 @@ import {
 
 import * as THREE from 'three';
 
+export function TestLogo3D() {
+  const meshRef = useRef();
+
+  useFrame((state, delta) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += delta * 0.5;
+    }
+  });
+
+  return (
+    <group position={[0, 2.2, 0]}>
+      <mesh ref={meshRef}>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshStandardMaterial color="orange" />
+      </mesh>
+    </group>
+  );
+}
+
 // Component to handle the animated model
 function AnimatedModel() {
   const modelRef = useRef<THREE.Group>(null);
+
+  const modelPath = 'public/media/3dAssets/LOGO_NIKAI3D/GLTF/LOGO_NIKAI.gltf';
+
+  useEffect(() => {
+    console.log('Logo component mounted', modelPath);
+  }, []);
 
   useFrame((state, delta) => {
     if (modelRef.current) {
@@ -40,7 +65,7 @@ function AnimatedModel() {
     <group ref={modelRef}>
       <GLTFModel 
         modelScale={0.4} 
-        modelPath='/media/3dAssets/LOGO_NIKAI3D/GLFT/LOGO_NIKAI.gltf'
+        modelPath={modelPath}
         position={[0, 0, 0]} // Position the model
         rotation={[0, 0, 0]} // Initial rotation
       />

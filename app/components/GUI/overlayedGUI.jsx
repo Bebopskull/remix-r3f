@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import Header from './Header';
 import contextualMenu from './contextualMenu';
-import '../../src/styles/estilocontinuo.css'
-import '../../src/styles/nikaiCSS.css'
+// import '../../src/styles/estilocontinuo.css'
+// import '../../src/styles/nikaiCSS.css'
 import { navigationData } from '../../src/routes/navigationData';
 
 

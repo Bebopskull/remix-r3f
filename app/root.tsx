@@ -16,25 +16,20 @@ import { Suspense } from 'react'
 import { useNavigate, useLocation } from "@remix-run/react"
 import { OverlayedGUI } from 'app/components/GUI/overlayedGUI.jsx'  
 import CornellBoxGallery from '~/components/3D/Scenes/cornell-box-gallery'
+import Logo3D from 'public/media/3dAssets/LOGO_NIKAI3D/GLTF/LOGO_NIKAI.gltf'
+// import Logo3D from 'public/media/3dAssets/LOGO_NIKAI3D/GLTF/LOGO_NIKAI.gltf'
 
 
 
-
-export const meta: MetaFunction = () => ([{
-  charset: "utf-8",
-  title: "Your Studio",
-  viewport: "width=device-width,initial-scale=1",
-}])
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: "/styles/tailwind.css" },
-  { rel: "stylesheet", href: "/CSS/site.css" },
-  { rel: "stylesheet", href: "/CSS/estilocontinuo.css" },
-  { rel: "stylesheet", href: "/CSS/webgl.css" },
-  { rel: "stylesheet", href: "/CSS/glsl.css" },
-  { rel: "stylesheet", href: "/CSS/nikaiCSS.css" }
-
+  { rel: "stylesheet", href: "/styles/site.css" },
+  { rel: "stylesheet", href: "/styles/estilocontinuo.css" },
+  { rel: "stylesheet", href: "/styles/webgl.css" },
+  { rel: "stylesheet", href: "/styles/GLSL.css" },
+  { rel: "stylesheet", href: "/styles/nikaiCSS.css" }
 ]
+
 
 // ==========================================
 // CornellBoxContainer - Wrapper for your existing component
@@ -138,6 +133,86 @@ const LoadingFallback = () => {
 //   )
 // }
 
+// export default function App() {
+//   return (
+//     <html lang="en">
+//       <head>
+//         <Meta />
+//         <Links />
+//       </head>
+//       <body className="m-0 p-0 overflow-hidden bg-gray-900">
+//         {/* <Header /> */}
+//         <div className="canvasContainer fixed inset-0 w-screen h-screen">
+//           {/* Your existing Scene setup */}
+//           <Canvas 
+//             camera={{ position: [0, 0, 9] }}
+//             //for now hard code the style of the canvas
+//             style={{
+//               width: '100%',
+//               height: '100%',
+//               position: 'absolute',
+//               top: 0,
+//               left: 0,
+//               right: 0,
+//               bottom: 0,
+//             }}
+//           >
+//             {/* Your existing lighting setup */}
+//             <ambientLight intensity={0.4} />
+//             <directionalLight
+//               position={[10, 15, 5]}
+//               intensity={1}
+//               castShadow
+//               shadow-mapSize-width={2048}
+//               shadow-mapSize-height={2048}
+//             />
+//             <ambientLight intensity={0.5} />
+//             <directionalLight position={[10, 10, 5]} intensity={1} />
+
+//             {/* Your existing OrbitControls */}
+//             {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
+//         {/* Lighting for both scenes */}
+//         <ambientLight intensity={0.4} />
+//         <directionalLight
+//           position={[10, 15, 5]}
+//           intensity={1}
+//           castShadow
+//           shadow-mapSize-width={2048}
+//           shadow-mapSize-height={2048}
+//         />
+//         {/* Basic lighting */}
+//         <ambientLight intensity={0.5} />
+//         <directionalLight position={[10, 10, 5]} intensity={1} />
+//         {/* Mouse controls */}
+//         <OrbitControls target={[0, 3, 0]} 
+//         enableZoom={false}
+//         // horizontal rotation
+//         maxAzimuthAngle={Math.PI / 4}
+//         minAzimuthAngle={-  Math.PI / 4}
+//         // vertical rotation
+//         maxPolarAngle={Math.PI / 2.2}
+//         minPolarAngle={Math.PI / 2.2}
+//         enablePan={false}
+//         />
+
+//             {/* Cornell Box - Always Present */}
+//             <Suspense fallback={<LoadingFallback />}>
+//               <CornellBoxContainer>
+//                 {/* Dynamic content based on route */}
+//                 <Outlet />
+//               </CornellBoxContainer>
+//             </Suspense>
+//           </Canvas>
+//           {/* <OverlayedGUI /> */}
+//         </div>
+
+//         <ScrollRestoration />
+//         <Scripts />
+//       </body>
+//     </html>
+//   )
+// }
+//test Canvas for debugging
 export default function App() {
   return (
     <html lang="en">
@@ -145,70 +220,45 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="m-0 p-0 overflow-hidden bg-gray-900 ">
-        {/* <Header /> */}
-        <div className="canvasContainer fixed inset-0 w-screen h-screen">
-          {/* Your existing Scene setup */}
-          <Canvas 
-            camera={{ position: [0, 0, 9] }}
-            //for now hard code the style of the canvas
-            style={{
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-          >
-            {/* Your existing lighting setup */}
-            <ambientLight intensity={0.4} />
-            <directionalLight
-              position={[10, 15, 5]}
-              intensity={1}
-              castShadow
-              shadow-mapSize-width={2048}
-              shadow-mapSize-height={2048}
-            />
-            <ambientLight intensity={0.5} />
+      <body style={{ margin: 0, padding: 0, overflow: 'hidden', background: 'black' }}>
+        <div style={{ width: '100vw', height: '100vh' }}>
+          <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
+            <ambientLight intensity={0.8} />
             <directionalLight position={[10, 10, 5]} intensity={1} />
+            <OrbitControls enableZoom={true} enablePan={true} />
 
-            {/* Your existing OrbitControls */}
-            {/* <Canvas camera={{ position: [0, 15, 15], fov: 30}} shadows> */}
-        {/* Lighting for both scenes */}
-        <ambientLight intensity={0.4} />
-        <directionalLight
-          position={[10, 15, 5]}
-          intensity={1}
-          castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-        />
-        {/* Basic lighting */}
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        {/* Mouse controls */}
-        <OrbitControls target={[0, 3, 0]} 
-        enableZoom={false}
-        // horizontal rotation
-        maxAzimuthAngle={Math.PI / 4}
-        minAzimuthAngle={-  Math.PI / 4}
-        // vertical rotation
-        maxPolarAngle={Math.PI / 2.2}
-        minPolarAngle={Math.PI / 2.2}
-        enablePan={false}
-        />
+            {/* Reference cube */}
+            <mesh position={[-5, 0, 0]}>
+              <boxGeometry args={[1, 1, 1]} />
+              <meshStandardMaterial color="red" />
+            </mesh>
 
-            {/* Cornell Box - Always Present */}
-            <Suspense fallback={<LoadingFallback />}>
-              <CornellBoxContainer>
-                {/* Dynamic content based on route */}
-                <Outlet />
-              </CornellBoxContainer>
+            {/* Your Logo */}
+            <Suspense fallback={
+              <mesh position={[0, 0, 0]}>
+                <boxGeometry args={[1, 1, 1]} />
+                <meshBasicMaterial color="yellow" />
+              </mesh>
+            }>
+              <Logo3D />
             </Suspense>
           </Canvas>
-          <OverlayedGUI />
+
+          {/* Debug overlay */}
+          <div style={{
+            position: 'absolute',
+            top: 10,
+            left: 10,
+            color: 'white',
+            background: 'rgba(0,0,0,0.7)',
+            padding: '10px',
+            fontFamily: 'monospace',
+            zIndex: 1000
+          }}>
+            <div>Debug Mode - CSS Disabled</div>
+            <div>Should see: Red, Blue, Green cubes + White wireframe</div>
+            <div>Controls: Drag to rotate, scroll to zoom</div>
+          </div>
         </div>
 
         <ScrollRestoration />
@@ -217,5 +267,7 @@ export default function App() {
     </html>
   )
 }
+
+
 
 

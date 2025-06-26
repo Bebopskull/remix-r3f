@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
-import '../../src/styles/estilocontinuo.css'
-import '../../src/styles/nikaiCSS.css'
+// import '../../src/styles/estilocontinuo.css'
+// import '../../src/styles/nikaiCSS.css'
 
 // Lower Left Navigation List Component
 const contextualMenu = ({ items, activeSection=null, onItemClick=null, className = "" }) => {
