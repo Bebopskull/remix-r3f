@@ -3,7 +3,7 @@ import Header from './Header';
 import contextualMenu from './contextualMenu';
 // import '../../src/styles/estilocontinuo.css'
 // import '../../src/styles/nikaiCSS.css'
-import { navigationData } from '../../src/routes/navigationData';
+import { navigationData } from '../../src/navigationData.js';
 
 
 export const OverlayedGUI = () => {
