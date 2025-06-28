@@ -3,15 +3,15 @@ export const navigationData = {
   projects: [
     { title: 'Time Machine: Live Online', path: '/products/time-machine' },
     { 
-      title: 'Luv - Laboratoire d\'univers Virtuels', 
+      title: 'LUV', 
       path: '/products/luv', 
       id: 'luv',
       LUVProjects: [
-        { title: 'Elections Ontario', path: '/products/luv/elections-ontario', id: 'elections-ontario' },
-        { title: 'CampKazoo', path: '/products/luv/camp-kazoo' },
-        { title: 'Aquazette', path: '/products/luv/aquazette' },
-        { title: 'Morgane et ses organes', path: '/products/luv/morgane-et-ses-organes' },
-        { title: 'Time Machine', path: '/products/luv/time-machine' }
+        // { title: 'Elections Ontario', path: '/products/luv/elections-ontario', id: 'elections-ontario' },
+        // { title: 'CampKazoo', path: '/products/luv/camp-kazoo' },
+        // { title: 'Aquazette', path: '/products/luv/aquazette' },
+        // { title: 'Morgane et ses organes', path: '/products/luv/morgane-et-ses-organes' },
+        // { title: 'Time Machine', path: '/products/luv/time-machine' }
       ]
     },
     { title: 'The Self', path: '/products/the-self' },

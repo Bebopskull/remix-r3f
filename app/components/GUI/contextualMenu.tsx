@@ -34,9 +34,12 @@ const ContextualMenu = ({ items, activeSection, className = "" }) => {
       return navigationData.lab;
     } else if (location.pathname.startsWith('/about')) {
       return navigationData.about;
+    } else if (location.pathname === '/') {
+      // Empty contextual menu for home page
+      return [];
     }
-    // Default to projects if on home page
-    return navigationData.projects;
+    // Default fallback
+    return [];
   };
 
   // Get current section name
@@ -44,6 +47,7 @@ const ContextualMenu = ({ items, activeSection, className = "" }) => {
     if (location.pathname.startsWith('/products')) return 'Products';
     if (location.pathname.startsWith('/lab')) return 'Lab';
     if (location.pathname.startsWith('/about')) return 'About';
+    if (location.pathname === '/') return 'Home';
     return 'Navigation';
   };
 

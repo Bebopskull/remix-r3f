@@ -2,14 +2,15 @@ import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, 
   useFrame, 
   useThree, 
-  useLoader
+  useLoader,
 } from '@react-three/fiber';
 import { 
   OrbitControls, 
   PerspectiveCamera, 
   Text,
   useTexture,
-  Environment
+  Environment,
+  useGLTF
 } from '@react-three/drei';
 import { ModelLoader,
   SceneLoader,
@@ -24,11 +25,11 @@ import * as THREE from 'three';
 
 // Cornell Box Container //carga el cornellBoxTest_fromFBXtoGLTF.gltf
 const CornellBox = () => {
+  // const {scene} = useGLTF('/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf');
   return (
     <group>
-      {/* <ModelLoader modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" /> */}
-      <GLTFModel modelPath="./public/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1}/>
-      {/* <GLTFModel modelPath='./public/models/GLTF_normals/cornellBox_FBXtoGLTF_normal.gltf' modelScale={0.1}/> */}
+      {/* return <primitive object={scene} />; */}
+      <GLTFModel modelPath="/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1} />
     </group>
   )
 }

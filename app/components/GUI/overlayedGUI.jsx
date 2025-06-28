@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Header from './Header';
-import ContextualMenu from './contextualMenu';
+import ContextualMenu from './contextualMenu.tsx';
 // import '../../src/styles/estilocontinuo.css'
 // import '../../src/styles/nikaiCSS.css'
 import { navigationData } from '../../src/navigationData.js';
