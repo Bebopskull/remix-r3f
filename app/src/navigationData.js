@@ -1,6 +1,7 @@
 // Navigation data structure
 export const navigationData = {
   projects: [
+    { title: 'Time Machine: Live Online', path: '/products/time-machine' },
     { 
       title: 'Luv - Laboratoire d\'univers Virtuels', 
       path: '/products/luv', 

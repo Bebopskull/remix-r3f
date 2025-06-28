@@ -4,8 +4,8 @@
 import type { FC, PropsWithChildren } from 'react';
 
 // NavItem component
-const NavItem: FC<PropsWithChildren<{ className?: string; id?: string }>> = ({ className, id, children }) => (
-  <li className={className} id={id}>
+const NavItem: FC<PropsWithChildren<{ className?: string; id?: string; onClick?: (e: React.MouseEvent) => void }>> = ({ className, id, onClick, children }) => (
+  <li className={className} id={id} onClick={onClick}>
     {children}
   </li>
 );
@@ -18,25 +18,35 @@ const NavList: FC<PropsWithChildren<{}>> = ({ children }) => (
 );
 
 // NavBar component
-const NavBar: FC = () => (
-  <nav className="navBan" id="navBan">
-    <NavList>
-      <NavItem className="liBan" id="projects">
-        <a className="libantext">Projects</a>
-      </NavItem>
-      <p className="slash" id="slash">/</p>
-      {/*
-      <NavItem className="liBan" id="lab">
-        <a className="libantext">Lab_</a>
-      </NavItem>
-      <p className="slash" id="slash">/</p>
-      */}
-      <NavItem className="liBan" id="about">
-        <a className="libantext">About</a>
-      </NavItem>
-    </NavList>
-  </nav>
-);
+const NavBar: FC<{ onNavClick?: (e: React.MouseEvent) => void }> = ({ onNavClick }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    const sectionId = e.currentTarget.id;
+    console.log('NavBar clicked:', sectionId);
+    if (onNavClick) {
+      onNavClick(e);
+    }
+  };
+
+  return (
+    <nav className="navBan" id="navBan">
+      <NavList>
+        <NavItem className="liBan" id="projects" onClick={handleClick}>
+          <a className="libantext">Projects</a>
+        </NavItem>
+        <p className="slash" id="slash">/</p>
+        
+        <NavItem className="liBan" id="lab" onClick={handleClick}>
+          <a className="libantext">Lab_</a>
+        </NavItem>
+        <p className="slash" id="slash">/</p>
+       
+        <NavItem className="liBan" id="about" onClick={handleClick}>
+          <a className="libantext">About</a>
+        </NavItem>
+      </NavList>
+    </nav>
+  );
+};
 
 export default NavBar;
 export { NavList, NavItem }; 

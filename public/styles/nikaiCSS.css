@@ -237,70 +237,36 @@ label{
   width: 100vw;
   height: 100vh;
   z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-start;
 }
 
-/*
-.caseLogo:hover {
+
+/* .caseLogo:hover {
   transform: scale(1.02);
   opacity: 100%;
-}
-*/
+} */
+
 
 .logo{
   height:  80%;
   width: 80%;
-  
   display: flex;
   float: right;
   margin:0%;
-
   padding-top: 0px;
   padding-bottom: 10px;
-
   margin-top: 0px;
-  
-  /* float: center; */
-  
+  /* float: center; */  
   mix-blend-mode: normal;
-
   align-self: flex-end;
-  
   position: relative;
-
   pointer-events: auto;
-
-  cursor: auto;
-
+  cursor: pointer;
   z-index:  1; 
-
-
 }
-
-/*
-#logo2{
-  
-  
-  display: flex;
-  float: right;
-  margin:0%;
-
-  padding-top: 0vw;
-  padding-bottom: 0vh;
-  float: center;
-  
-  mix-blend-mode: normal;
-
-  align-self: center;
-  
-  position: relative;
-
-  size: 40vh;
-  z-index:  -1; 
-
-
-}
-
-*/
 
 /*navegador*/
 
@@ -369,29 +335,22 @@ label{
 
 .NavegadorAbs{
 
-  position: fixed;
-
-  height: 85vh;
-
+  position: absolute;
+  height: 80vh;
   width: auto;
-
   display:flex;
-
   min-width: 250px;
-
   line-height: 1.;
-
   margin-bottom: 4vh;
-
   margin-top: 0vh;
-
-  overflow: none;
-
-  background-color: rgba(0,0,0,0);
-
+  overflow: unset;
+  background-color: rgba(0,0,0,0.0);
   z-index: 1;
-  align-self:flex-start;
-  align-content: flex-end;
+  align-self: flex-end;
+  align-content: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
 
 }
 
@@ -1146,9 +1105,11 @@ label{
 
 .caseLogo{
   min-width: 100px;
+  cursor: pointer;
 }
 .logo{
   height: 24vh;
+  cursor: pointer;
 }
 .lema{
  
