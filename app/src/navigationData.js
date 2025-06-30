@@ -1,23 +1,23 @@
 // Navigation data structure
 export const navigationData = {
   projects: [
-    { title: 'Time Machine: Live Online', path: '/products/time-machine' },
+    { title: 'Time Machine: Live Online', path: '/projects/time-machine' },
     { 
       title: 'LUV', 
-      path: '/products/luv', 
+      path: '/projects/luv', 
       id: 'luv',
       LUVProjects: [
-        // { title: 'Elections Ontario', path: '/products/luv/elections-ontario', id: 'elections-ontario' },
-        // { title: 'CampKazoo', path: '/products/luv/camp-kazoo' },
-        // { title: 'Aquazette', path: '/products/luv/aquazette' },
-        // { title: 'Morgane et ses organes', path: '/products/luv/morgane-et-ses-organes' },
-        // { title: 'Time Machine', path: '/products/luv/time-machine' }
+        // { title: 'Elections Ontario', path: '/projects/luv/elections-ontario', id: 'elections-ontario' },
+        // { title: 'CampKazoo', path: '/projects/luv/camp-kazoo' },
+        // { title: 'Aquazette', path: '/projects/luv/aquazette' },
+        // { title: 'Morgane et ses organes', path: '/projects/luv/morgane-et-ses-organes' },
+        // { title: 'Time Machine', path: '/projects/luv/time-machine' }
       ]
     },
-    { title: 'The Self', path: '/products/the-self' },
-    { title: 'Shiny Talking People', path: '/products/shiny-talking-people' },
-    { title: 'Exos', path: '/products/exos' },
-    { title: 'Invitame a la Playa', path: '/products/invitame-a-la-playa' }
+    { title: 'The Self', path: '/projects/the-self' },
+    // { title: 'Shiny Talking People', path: '/products/shiny-talking-people' },
+    { title: 'Exos', path: '/projects/exos' },
+    { title: 'Invitame a la Playa', path: '/projects/invitame-a-la-playa' }
   ],
   lab: [
     { title: 'Current Experiments', path: '/lab/experiments' },
@@ -26,10 +26,12 @@ export const navigationData = {
     { title: 'Open Source', path: '/lab/open-source' }
   ],
   about: [
-    { title: 'Studio Overview', path: '/about' },
-    { title: 'Our Team', path: '/about/team' },
-    { title: 'Béa - Founder/Producer', path: '/about/team/bea' },
-    { title: 'Ed - Creative Director', path: '/about/team/ed' },
+    // { title: 'Studio Overview', path: '/about' },
+    { title: 'Our Team', path: '/about/team',
+      members: [{ title: 'Béa', path: '/about/team/bea' },
+        { title: 'Ed', path: '/about/team/ed' }
+      ]},
+    ,
     { title: 'Contact', path: '/contact' }
   ]
 };

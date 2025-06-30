@@ -17,10 +17,7 @@ import ContentManager from '~/components/3D/contentManager'
 
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: "/styles/site.css" },
-  { rel: "stylesheet", href: "/styles/estilocontinuo.css" },
-  { rel: "stylesheet", href: "/styles/webgl.css" },
-  { rel: "stylesheet", href: "/styles/GLSL.css" },
+ 
   { rel: "stylesheet", href: "/styles/nikaiCSS.css" }
 ]
 

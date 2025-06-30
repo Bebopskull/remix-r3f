@@ -9,17 +9,17 @@ export const loader = async ({ request, params }: LoaderFunctionArgs) => {
   // Validate that the route exists in your content map
   const validRoutes = [
     '/',
-    '/products',
-    '/products/time-machine',
-    '/products/luv',
-    '/products/elections-ontario',
-    '/products/camp-kazoo',
-    '/products/aquazette',
-    '/products/morgane-et-ses-organes',
-    '/products/the-self',
-    '/products/shiny-talking-people',
-    '/products/exos',
-    '/products/invitame-a-la-playa',
+    '/projects',
+    '/projects/time-machine',
+    '/projects/luv',
+    '/projects/luv/elections-ontario',
+    '/projects/luv/camp-kazoo',
+    '/projects/luv/aquazette',
+    '/projects/luv/morgane-et-ses-organes',
+    '/projects/the-self',
+    '/projects/shiny-talking-people',
+    '/projects/exos',
+    '/projects/invitame-a-la-playa',
     '/lab',
     '/about',
     '/about/team',
@@ -48,47 +48,47 @@ export const meta: MetaFunction = ({ data, location }) => {
         title: "nikai.xyz - Digital Experiences & Virtual Universes",
         description: "We create innovative digital experiences and virtual universes",
       },
-      '/products': {
-        title: "Products - nikai.xyz",
+      '/projects': {
+        title: "Projects - nikai.xyz",
         description: "Our portfolio of digital products and experiences",
       },
-      '/products/time-machine': {
+      '/projects/time-machine': {
         title: "Time Machine - nikai.xyz",
         description: "Interactive temporal experience design",
       },
-      '/products/luv': {
+      '/projects/luv': {
         title: "Luv - Laboratoire d'univers Virtuels - nikai.xyz",
         description: "Virtual universe laboratory for immersive experiences",
       },
-      '/products/elections-ontario': {
+      '/projects/luv/elections-ontario': {
         title: "Elections Ontario - nikai.xyz",
         description: "Interactive electoral information system",
       },
-      '/products/camp-kazoo': {
+      '/projects/luv/camp-kazoo': {
         title: "CampKazoo - nikai.xyz",
         description: "Virtual camp experience platform",
       },
-      '/products/aquazette': {
+      '/projects/luv/aquazette': {
         title: "Aquazette - nikai.xyz",
         description: "Aquatic-themed digital experience",
       },
-      '/products/morgane-et-ses-organes': {
+      '/projects/luv/morgane-et-ses-organes': {
         title: "Morgane et ses organes - nikai.xyz",
         description: "Interactive anatomical experience",
       },
-      '/products/the-self': {
+      '/projects/the-self': {
         title: "The Self - nikai.xyz",
         description: "Introspective digital experience",
       },
-      '/products/shiny-talking-people': {
+      '/projects/shiny-talking-people': {
         title: "Shiny Talking People - nikai.xyz",
         description: "Social interaction digital experience",
       },
-      '/products/exos': {
+      '/projects/exos': {
         title: "Exos - nikai.xyz",
         description: "External systems exploration",
       },
-      '/products/invitame-a-la-playa': {
+        '/projects/invitame-a-la-playa': {
         title: "Invitame a la Playa - nikai.xyz",
         description: "Beach-themed virtual experience",
       },
@@ -114,7 +114,7 @@ export const meta: MetaFunction = ({ data, location }) => {
       },
     };
     
-    return routes[path] || routes['/'];
+    return routes[path] || routes['/projects'];
   };
 
   const { title, description } = getPageInfo(pathname);

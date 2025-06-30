@@ -17,31 +17,31 @@ const contentMap = {
   // Home/Default
   '/': () => <Home />,
   
-  // Products
-  '/products': () => <ProductsOverview />,
-  '/products/time-machine': () => <TimeMachineContent />,
-  '/products/luv': () => <LuvContent />,
-    '/products/luv/elections-ontario': () => <ElectionsOntarioContent />,
-    '/products/luv/camp-kazoo': () => <CampKazooContent />,
-    '/products/luv/aquazette': () => <AquazetteContent />,
-    '/products/luv/morgane-et-ses-organes': () => <MorganeContent />,
-  '/products/the-self': () => <TheSelfContent />,
-  '/products/shiny-talking-people': () => <ShinyTalkingPeopleContent />,
-  '/products/exos': () => <ExosContent />,
-  '/products/invitame-a-la-playa': () => <InvitameContent />,
+  // Projects
+  // '/projects': () => <Home />,
+  '/projects/time-machine': () => <TimeMachineContent />,
+  '/projects/luv': () => <LuvContent />,
+    '/projects/luv/elections-ontario': () => <ElectionsOntarioContent />,
+    '/projects/luv/camp-kazoo': () => <CampKazooContent />,
+    '/projects/luv/aquazette': () => <AquazetteContent />,
+    '/projects/luv/morgane-et-ses-organes': () => <MorganeContent />,
+  '/projects/the-self': () => <TheSelfContent />,
+  '/projects/shiny-talking-people': () => <ShinyTalkingPeopleContent />,
+  '/projects/exos': () => <ExosContent />,
+  '/projects/invitame-a-la-playa': () => <InvitameContent />,
   
   // Lab
-  '/lab': () => <LabContent />,
+  // '/lab': () => <Home />,
   
   // About
-  '/about': () => <AboutContent />,
+  // '/about': () => <Home />,
   '/about/team': () => <TeamContent />,
     '/about/team/bea': () => <BeaContent />,
     '/about/team/ed': () => <EdContent />,
 };
 
 // Individual content components
-const ProductsOverview = () => (
+const ProjectsOverview = () => (
   <group>
     <mesh position={[0, 0, 0]}>
       <sphereGeometry args={[1, 32, 32]} />

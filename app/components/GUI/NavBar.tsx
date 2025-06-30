@@ -56,10 +56,10 @@ const NavBar: FC<{ onNavClick?: (e: React.MouseEvent) => void }> = ({ onNavClick
       <NavList>
         {/* Projects */}
         <NavItem
-          className={`liBan ${isActive('/products') ? 'active' : '' }`}
+          className={`liBan ${isActive('/projects') ? 'active' : '' }`}
           id="projects"
           onClick={() => {
-            handleNavigation('/products');
+            handleNavigation('/projects');
             handleClick;
           }}
         >

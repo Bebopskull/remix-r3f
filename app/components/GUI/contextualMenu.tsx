@@ -28,7 +28,7 @@ const ContextualMenu = ({ items, activeSection, className = "" }) => {
 
   // Determine which items to show based on current route
   const getCurrentItems = () => {
-    if (location.pathname.startsWith('/products')) {
+    if (location.pathname.startsWith('/projects')) {
       return navigationData.projects;
     } else if (location.pathname.startsWith('/lab')) {
       return navigationData.lab;
@@ -44,7 +44,7 @@ const ContextualMenu = ({ items, activeSection, className = "" }) => {
 
   // Get current section name
   const getCurrentSectionName = () => {
-    if (location.pathname.startsWith('/products')) return 'Products';
+    if (location.pathname.startsWith('/projects')) return 'Projects';
     if (location.pathname.startsWith('/lab')) return 'Lab';
     if (location.pathname.startsWith('/about')) return 'About';
     if (location.pathname === '/') return 'Home';
@@ -58,32 +58,34 @@ const ContextualMenu = ({ items, activeSection, className = "" }) => {
 
   return (
     <div className={`NavegadorAbs ${className}`}>
-      <div className="NavSecciones">
+      <ul className="NavSecciones" id="NavSecciones">
         {currentItems.map((item, index) => (
-          <div key={index}>
-            <div className="li">
+          <li key={index}>
+            <li className="li">
               <a
                 className="linkdenavegacion"
+                id={`${item.title}`}
                 onClick={() => handleItemClick(item.path, item.title)}
               >
                 {item.title}
               </a>
-            </div>
+            </li>
 
             {/* Handle LUV sub-projects if they exist */}
             {item.LUVProjects && item.LUVProjects.map((subItem, subIndex) => (
-              <div key={`sub-${subIndex}`} className="li" style={{ marginLeft: '20px' }}>
+              <li key={`sub-${subIndex}`} className="li" style={{ marginLeft: '20px' }}>
                 <a
                   className="linkdenavegacion"
+                  id={`sub-${subIndex}`}
                   onClick={() => handleItemClick(subItem.path, subItem.title)}
                 >
                   ↳ {subItem.title}
                 </a>
-              </div>
+              </li>
             ))}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
