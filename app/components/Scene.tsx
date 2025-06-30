@@ -15,12 +15,7 @@ import {
   CubeMappedShader,
   RotatingCubes,
 } from './3D/materials/ShaderMappedCube'
-import BeachScene from './3D/Scenes/beachScene'
-import MexicanPlazaScene from './3D/Scenes/mexicanPlaza_r3f'
-import ChamacoCoreComplexMesh from './3D/Scenes/chamacocore-complex-mesh'
-import ChamacoPlazaCartoon from './3D/Scenes/chamaco-plaza-cartoon'
-import ChamacoCoreRef from './3D/Scenes/chamacocore-refined-clay'
-// import ChamacoCoreBeach from './3D/Scenes/chamacocore-beach-enhanced'
+
 import Logo3D from './home'
 
 
