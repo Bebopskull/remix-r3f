@@ -69,7 +69,7 @@ const NavBar: FC<{ onNavClick?: (e: React.MouseEvent) => void }> = ({ onNavClick
         <p className="slash" id="slash">/</p>
 
         {/* Lab */}
-        <NavItem
+        {/* <NavItem
           className={`liBan ${isActive('/lab') ? 'active' : ''}`}
           id="lab"
           onClick={() => {
@@ -80,7 +80,7 @@ const NavBar: FC<{ onNavClick?: (e: React.MouseEvent) => void }> = ({ onNavClick
           <a className="libantext">Lab_</a>
         </NavItem>
 
-        <p className="slash" id="slash">/</p>
+        <p className="slash" id="slash">/</p> */}
 
         {/* About */}
         <NavItem

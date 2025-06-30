@@ -3,12 +3,14 @@ import Header from './Header';
 import ContextualMenu from './contextualMenu.tsx';
 // import '../../src/styles/estilocontinuo.css'
 // import '../../src/styles/nikaiCSS.css'
-import { navigationData } from '../../src/navigationData.js';
-
+import { currentNavigationData } from '../../src/navigationData.js';
+import { Footer } from './footer.tsx';
 
 
 
 export const OverlayedGUI = () => {
+
+  const navigationData = currentNavigationData;
 
   const [activeSection, setActiveSection] = useState(null);
 
@@ -26,11 +28,12 @@ export const OverlayedGUI = () => {
     <div className="GUI">
       <Header items={navigationData[activeSection]} onSectionChange={handleSectionChange} />
       <ContextualMenu items={navigationData[activeSection]} activeSection={activeSection} />
-      <div className="footer">
+      <Footer />
+      {/* <div className="footer">
         <div className="moto">
           <p> footer</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
