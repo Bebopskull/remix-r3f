@@ -21,18 +21,122 @@ import { ModelLoader,
   LoadingScreen 
 } from '../Utilities/GLTFLoaders';
 
+import { NikaiBasicFragmentShaderFixed, nikaiVertexShader, nikaiFragmentShader } from './CornellBoxWithNikaiShader';
+
 import * as THREE from 'three';
+
 
 // Cornell Box Container //carga el cornellBoxTest_fromFBXtoGLTF.gltf
 const CornellBox = () => {
-  // const {scene} = useGLTF('/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf');
+  const {scene, materials, nodes, animations} = useGLTF('/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf');
+  console.log(nodes);
+  const { size, pointer } = useThree();
+
+  // Define uniforms
+  const uniforms = useMemo(() => ({
+    u_time: { value: 0.0 },
+    u_resolution: { value: new THREE.Vector2(size.width, size.height) },
+    u_mouse: { value: new THREE.Vector2(0, 0) }, // Add this
+    u_LightColor: { value: new THREE.Color(0xbb905d) },
+    u_DarkColor: { value: new THREE.Color(0x7d490b) },
+    u_Frequency: { value: 6.0 },
+    u_NoiseScale: { value: 12.0 },
+    u_RingScale: { value: 0.6 },
+    u_Contrast: { value: 4.0 }
+  }), [size]);
+
+  // const testMaterial = new THREE.ShaderMaterial({
+  //   uniforms: uniforms,
+  //   vertexShader: nikaiVertexShader,
+  //   fragmentShader: nikaiFragmentShader,
+  //   transparent: false,
+  //   // side: THREE.DoubleSide
+  // });
+
+  const testMaterial = useMemo(() => {
+    return new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: nikaiVertexShader,
+      fragmentShader: nikaiFragmentShader,
+      // side: THREE.DoubleSide,
+      transparent: false
+    });
+  }, [uniforms]);
+
+  
+
+  //accessing full scene
+  const fullScene = scene;
+  console.log(fullScene);
+
+  //accesing specific elements
+  const box = nodes.cornellBoxTestFBX;
+  const floor= nodes.cornellBoxTestFBX_1;  
+  console.log(floor);
+
+  var boxMaterial = materials.MI_PaintedWall_cornellBoxTestFBX;
+  const nikaiMaterial = NikaiBasicFragmentShaderFixed({
+    vertexShader: nikaiVertexShader,
+    fragmentShader: nikaiFragmentShader,
+    uniforms: uniforms,
+  });
+
+
+  // Update uniforms
+  useFrame((state) => {
+    if (testMaterial) {
+      testMaterial.uniforms.u_time.value = state.clock.elapsedTime;
+      testMaterial.uniforms.u_mouse.value.set(
+        pointer.x * size.width,
+        pointer.y * size.height
+      );
+      testMaterial.uniforms.u_resolution.value.set(size.width, size.height);
+    }
+
+    // Also update test material
+    if (testMaterial.uniforms.u_time) {
+      testMaterial.uniforms.u_time.value = state.clock.elapsedTime;
+    }
+  });
+
+  // boxMaterial.color.set(0xff0000);
+  // boxMaterial.color.set(nikaiMaterial.nikaiFragmentShader.gl_FragColor);
+  console.log('nikaiMaterial =>', nikaiMaterial);
+  console.log('testMaterial =>', testMaterial);
+  // boxMaterial = nikaiMaterial;
+
   return (
     <group>
-      {/* return <primitive object={scene} />; */}
-      <GLTFModel modelPath="/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1} />
+      {/* <mesh  object={fullScene} scale={0.1}/>  */}
+      {/* <mesh geometry={floor.geometry} material={materials.Material_2} scale={0.1}/>  */}
+      <mesh geometry={box.geometry} scale={0.1} material={testMaterial}/> 
+         {/* <NikaiBasicFragmentShaderFixed
+          vertexShader={nikaiVertexShader}
+          fragmentShader={nikaiFragmentShader}
+          uniforms={nikaiMaterial.uniforms}
+         /> */}
+      <mesh/>
+      <mesh position={[5, 0, 0]} material={testMaterial}>
+        <boxGeometry args={[2, 2, 2]} />
+      </mesh>
+      <mesh geometry={floor.geometry} scale={0.1} material={boxMaterial}/> 
     </group>
-  )
-}
+  );
+};
+
+//accessing fullgltf scene
+
+//   return (
+//     <group>
+//       <mesh>
+//         <primitive object={fullScene} scale={0.1} material={nikaiMaterial}/>;
+//         {/* <boxGeometry args={[1, 1, 1]} />*/}
+        
+//       </mesh>
+//       {/* <GLTFModel modelPath="/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf" modelScale={0.1} /> */}
+//     </group>
+//   )
+// }
 
 // Gallery Lighting System
 const GalleryLighting = () => {

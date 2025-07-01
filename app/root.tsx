@@ -59,13 +59,13 @@ export default function App() {
             <CornellBoxGallery />
 
             {/* Content Manager - handles all route content */}
-            <ContentManager />
+            {/* <ContentManager /> */}
 
             {/* Preload assets */}
             <Preload all />
           </Canvas>
 
-          <OverlayedGUI />
+          {/* <OverlayedGUI /> */}
         </div>
 
         <ScrollRestoration />
