@@ -221,7 +221,8 @@ const nikaiFragmentShader = `
     vec3 color = vec3(1.0 * vPosition.x, 1.0 * vPosition.y, vPosition.z);
 
     // Base texture effect - FIXED VERSION
-    vec2 st1 = gl_FragCoord.xy / (u_resolution * 2.0);
+    // vec2 st1 = gl_FragCoord.xy / (u_resolution * 2.0);
+    vec2 st1 = vUv / (u_resolution * .002);
     vec2 m = ((vec2(-0.1 * u_mouse.x, u_mouse.y + 1.0) * 0.0005 + 0.5));
     
     // Prevent division by zero/very small numbers

@@ -47,11 +47,11 @@ export default function App() {
             {/* Always present controls */}
             <OrbitControls
               target={[0, 3, 0]}
-              enableZoom={false}
+              // enableZoom={false}
               maxAzimuthAngle={Math.PI / 4}
               minAzimuthAngle={-Math.PI / 4}
-              maxPolarAngle={Math.PI / 2.2}
-              minPolarAngle={Math.PI / 2.2}
+              // maxPolarAngle={Math.PI / 2.2}
+              // minPolarAngle={Math.PI / 2.2}
               enablePan={false}
             />
 
@@ -59,7 +59,7 @@ export default function App() {
             <CornellBoxGallery />
 
             {/* Content Manager - handles all route content */}
-            {/* <ContentManager /> */}
+            <ContentManager />
 
             {/* Preload assets */}
             <Preload all />

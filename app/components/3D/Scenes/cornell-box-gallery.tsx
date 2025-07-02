@@ -29,7 +29,9 @@ import * as THREE from 'three';
 // Cornell Box Container //carga el cornellBoxTest_fromFBXtoGLTF.gltf
 const CornellBox = () => {
   const {scene, materials, nodes, animations} = useGLTF('/models/GLTF_exports/cornellBoxTest_fromFBXtoGLTF.gltf');
-  console.log(nodes);
+  // const { scene, materials, nodes, animations } = useGLTF('/models/GLTF_Normals/CornellBoxTest_BigLevel.gltf');
+  // const {scene, materials, nodes, animations} = useGLTF('models/GLTF_Normals/CornellBoxTest_Level.gltf');
+  console.log('imported nodes =>', nodes);
   const { size, pointer } = useThree();
 
   // Define uniforms
@@ -67,14 +69,14 @@ const CornellBox = () => {
 
   //accessing full scene
   const fullScene = scene;
-  console.log(fullScene);
+  // console.log(fullScene);
 
   //accesing specific elements
-  const box = nodes.cornellBoxTestFBX;
+  const box = nodes.cornellBoxTestFBX; 
   const floor= nodes.cornellBoxTestFBX_1;  
-  console.log(floor);
+  console.log('box =>', box);
 
-  var boxMaterial = materials.MI_PaintedWall_cornellBoxTestFBX;
+  var boxMaterial = materials.MI_PaintedWall_CornellBoxText;
   const nikaiMaterial = NikaiBasicFragmentShaderFixed({
     vertexShader: nikaiVertexShader,
     fragmentShader: nikaiFragmentShader,
@@ -109,7 +111,12 @@ const CornellBox = () => {
     <group>
       {/* <mesh  object={fullScene} scale={0.1}/>  */}
       {/* <mesh geometry={floor.geometry} material={materials.Material_2} scale={0.1}/>  */}
-      <mesh geometry={box.geometry} scale={0.1} material={testMaterial}/> 
+      <mesh geometry={box.geometry} 
+      scale={0.1} 
+      material={testMaterial} 
+      position={[0, 0, 0]}
+      rotation={[0, 0, 0]}
+      /> 
          {/* <NikaiBasicFragmentShaderFixed
           vertexShader={nikaiVertexShader}
           fragmentShader={nikaiFragmentShader}
@@ -119,7 +126,7 @@ const CornellBox = () => {
       <mesh position={[5, 0, 0]} material={testMaterial}>
         <boxGeometry args={[2, 2, 2]} />
       </mesh>
-      <mesh geometry={floor.geometry} scale={0.1} material={boxMaterial}/> 
+      <mesh geometry={floor.geometry} scale={0.01} material={boxMaterial}/> 
     </group>
   );
 };
